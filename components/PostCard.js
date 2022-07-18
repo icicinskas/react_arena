@@ -14,7 +14,13 @@ const PostCard = ({ char }) => {
     nav("/main");
   }
 
-  setAtk(char.damage + weapon.maxDamage);
+  if (!weapon.maxDamage) {
+    setAtk(char.damage);
+    console.log(atk);
+  } else {
+    setAtk(char.damage + weapon.maxDamage);
+    console.log(atk);
+  }
 
   setPlayerHelth(char.health);
 
